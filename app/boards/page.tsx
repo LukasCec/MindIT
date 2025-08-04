@@ -2,6 +2,7 @@
 import { auth } from "@clerk/nextjs/server";
 import { supabase } from "@/lib/supabase";
 import CreateBoardForm from "@/components/CreateBoardForm";
+import Link from "next/link";
 
 
 export default async function BoardsPage() {
@@ -36,7 +37,14 @@ export default async function BoardsPage() {
                     ))}
                 </ul>
             )}
-            <CreateBoardForm />
+
+            <Link
+                href={`/boards/1`}
+                className="block p-4 bg-white border rounded shadow hover:bg-gray-50"
+            >
+                <p className="text-xl font-bold">Board1</p>
+            </Link>
+
         </div>
     );
 
