@@ -1,6 +1,8 @@
 // app/boards/page.tsx
 import { auth } from "@clerk/nextjs/server";
 import { supabase } from "@/lib/supabase";
+import CreateBoardForm from "@/components/CreateBoardForm";
+
 
 export default async function BoardsPage() {
     const { userId } = await auth(); // <- async!
@@ -34,6 +36,8 @@ export default async function BoardsPage() {
                     ))}
                 </ul>
             )}
+            <CreateBoardForm />
         </div>
     );
+
 }
